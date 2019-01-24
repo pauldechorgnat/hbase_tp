@@ -1,0 +1,21 @@
+create 'test', 'first_column_family', 'second_column_family'
+
+put 'test', 'row_id1', 'first_column_family:first_column', 'hello'
+put 'test', 'row_id1', 'first_column_family:second_column', 'world'
+put 'test', 'row_id1', 'first_column_family:third_column', '!'
+put 'test', 'row_id1', 'second_column_family:first_column', '!'
+put 'test', 'row_id1', 'second_column_family:second_column', 'how'
+
+put 'test', 'row_id2', 'first_column_family:first_column', 'are'
+put 'test', 'row_id2', 'first_column_family:second_column', 'you'
+put 'test', 'row_id2', 'second_column_family:third_column', '?'
+
+scan 'test'
+
+t = get_table 'test'
+
+t.put 'row_id3', 'first_column_family:first_column', 'fine and you?'
+
+t.scan
+
+exit
