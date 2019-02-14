@@ -1,17 +1,21 @@
 from happybase import Connection
 
 if __name__ == '__main__':
-    # creating a connection
+
+    # creating a connection with HBase
     hbase_connection = Connection(host='localhost', port=9090)
 
+    # name of the table to create
     table_name = 't1'
 
+    # column families to create
     families_schema = {
         'cf1': dict(),
         'cf2': dict()
     }
 
-    try :
+
+    try:
         hbase_connection.create_table('test', families=families_schema)
     except :
         print('pas instantier la table')
