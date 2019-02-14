@@ -20,14 +20,19 @@ if __name__ == '__main__':
     print('Current tables :')
     print(tables)
 
+    families_schema = {
+        'id': dict(),  # keeping default parameters
+        'features': dict()  # keeping default parameters
+    }
     # Creating a table
-    hbase_connection.create_table(table_name)
+    hbase_connection.create_table(table_name, families=families_schema)
 
     # printing out the tables in HBase
     tables = hbase_connection.tables()
     print('Current tables :')
     print(tables)
 
+    # getting access to the table
     table = hbase_connection.table(table_name)
 
     # flipper
