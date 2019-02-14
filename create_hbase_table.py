@@ -3,7 +3,7 @@ from happybase import Connection
 if __name__ == '__main__':
 
     # creating a connection with HBase
-    hbase_connection = Connection(host='localhost', port=9090)
+    hbase_connection = Connection(host='localhost', port=9090, autoconnect=True)
 
     # name of the table to create
     table_name = 't1'
@@ -23,8 +23,8 @@ if __name__ == '__main__':
     table = hbase_connection.table(table_name)
 
     data_to_put = {
-        'cf1:c1': 'hello',
-        'cf2:c1': 'world',
+        'cf1:c1': 'hello',  # column
+        'cf2:c1': 'world',  # column data
         'cf1:c2': '!'
     }
 
