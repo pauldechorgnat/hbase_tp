@@ -9,17 +9,12 @@ if __name__ == '__main__':
     # name of the table to create
     table_name = 'animals'
 
-    # column families to create
-    families_schema = {
-        'id': dict(),
-        'features': dict()
-    }
-
     # printing out the tables in HBase
     tables = hbase_connection.tables()
     print('Current tables :')
     print(tables)
 
+    # column families to create
     families_schema = {
         'id': dict(),  # keeping default parameters
         'features': dict()  # keeping default parameters
