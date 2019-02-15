@@ -1,7 +1,6 @@
 # HBase TP
 
 <i>This repository contains material for the Data Engineering course (part 2) of Data Scientest.</i>
----
 
 ## File description
 
