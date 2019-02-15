@@ -7,7 +7,7 @@ if __name__ == '__main__':
     hbase_connection = Connection(host='localhost', port=9090, autoconnect=True)
 
     # name of the table to create
-    table_name = 'animals'
+    table_name = 'animals2'
 
     # printing out the tables in HBase
     tables = hbase_connection.tables()
@@ -35,12 +35,12 @@ if __name__ == '__main__':
         'id:name': 'flipper',
         'features:race': 'dolphin',
         'features:gender': 'male',
-        'features:apnea': 10
+        'features:apnea': '10'
     }
 
     # lassie
     data_for_lassie = {
-        'id:chip_number': 314,
+        'id:chip_number': '314',
         'id:name': 'lassie',
         'features:race': 'colley',
         'features:gender': 'female'
